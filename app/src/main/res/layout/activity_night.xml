@@ -42,8 +42,8 @@
 
     <ImageView
         android:id="@+id/slideupmoon"
-        android:layout_width="411dp"
-        android:layout_height="229dp"
+        android:layout_width="410dp"
+        android:layout_height="163dp"
         android:layout_gravity="center_horizontal"
         android:adjustViewBounds="true"
         android:src="@drawable/slideupmoon"
@@ -55,7 +55,7 @@
         android:layout_height="293dp"
         android:layout_marginTop="28dp"
         android:rotation="-32"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/stpTrackBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goodnight"
@@ -64,14 +64,14 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="135dp"
-        android:layout_height="105dp"
-        android:layout_marginBottom="136dp"
+        android:layout_width="149dp"
+        android:layout_height="111dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpleDigitalClock2"
-        app:layout_constraintVertical_bias="0.962"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.892"
         app:srcCompat="@drawable/housedark" />
 
     <ImageView
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737"
+        app:layout_constraintVertical_bias="0.858"
         app:srcCompat="@drawable/nighttreese" />
 
     <ImageView
@@ -92,49 +92,48 @@
         android:layout_width="71dp"
         android:layout_height="70dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.983"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/slideupmoon"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.977"
         app:srcCompat="@drawable/nighttreese" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="71dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878"
         app:srcCompat="@drawable/nighttreese" />
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="71dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/slideupmoon"
         app:layout_constraintEnd_toEndOf="@+id/slideupmoon"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/nighttreese" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/stpTrackBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
         android:text="STOP TRACKING"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpleDigitalClock2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

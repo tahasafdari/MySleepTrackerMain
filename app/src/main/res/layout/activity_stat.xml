@@ -48,35 +48,35 @@
             android:src="@drawable/line"
             app:tint="@color/white" />
     </LinearLayout>
+    <!--
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:id="@+id/wheelprogress"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:progressColor="#32a852"
+            app:percentage="302"/>
 
-    <ProgressBar
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:id="@+id/wheelprogress"
-        android:gravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:progressColor="#32a852"
-        app:percentage="302"/>
 
-<!--
-    <com.app.progresviews.ProgressWheel
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:id="@+id/wheelprogress"
-        android:gravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:progressColor="#32a852"
-        app:barWidth="10dp"
-        app:marginBtwText= "25dp"
-        app:countText="84%"
-        app:definitionText="Quality"
-        app:countTextColor="@color/white"
-        app:defTextColor="@color/white"
-        app:defTextSize="15sp"
-        app:countTextSize="35sp"
-        app:percentage="302"/> -->
+        <com.app.progresviews.ProgressWheel
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:id="@+id/wheelprogress"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:progressColor="#32a852"
+            app:barWidth="10dp"
+            app:marginBtwText= "25dp"
+            app:countText="84%"
+            app:definitionText="Quality"
+            app:countTextColor="@color/white"
+            app:defTextColor="@color/white"
+            app:defTextSize="15sp"
+            app:countTextSize="35sp"
+            app:percentage="302"/> -->
 
 
     <TextView
@@ -109,7 +109,6 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -209,18 +208,19 @@
                 android:textColor="#69706b"
                 android:textSize="24dp"></TextView>
         </LinearLayout>
+
         <Button
             android:id="@+id/backtohome"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="30dp"
+            android:fontFamily="@font/manropebold"
+            android:scaleType="fitEnd"
             android:text="Back to home"
             android:textColor="@color/white"
-            android:fontFamily="@font/manropebold"
-            android:textSize="17dp"
-            android:scaleType="fitEnd" />
+            android:textSize="17dp" />
 
     </LinearLayout>
 </LinearLayout>
