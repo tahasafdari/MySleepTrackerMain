@@ -132,14 +132,14 @@
                     app:tint="#69706b"></ImageView>
 
                 <TextView
+                    android:id="@+id/wenttosleep"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/manropebold"
-                    android:text="23:00"
-                    android:id="@+id/wenttosleep"
+                    android:text="23:00:00"
                     android:textColor="@color/black"
                     android:textSize="32dp"
                     android:textStyle="bold"></TextView>
@@ -183,14 +183,14 @@
                     app:tint="#69706b"></ImageView>
 
                 <TextView
+                    android:id="@+id/wakeup"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/manropebold"
-                    android:text="06:00"
-                    android:id="@+id/wakeup"
+                    android:text="06:00:00"
                     android:textColor="@color/black"
                     android:textSize="32dp"
                     android:textStyle="bold"></TextView>

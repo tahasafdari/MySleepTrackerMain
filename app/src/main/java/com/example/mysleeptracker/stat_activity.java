@@ -41,28 +41,10 @@ public class stat_activity extends AppCompatActivity {
     public void statSet() {
         SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
         ed = tracking.edit();
+
         dateStat = findViewById(R.id.datestat);
         Date curDate = new Date();
         dateStat.setText(DateFormat.getDateInstance().format(curDate));
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
-        SimpleDateFormat displayTime = new SimpleDateFormat("HH:mm:ss");
-
-        try {
-            Date storeDate = formatter.parse(tracking.getString("counting", formatter.format(curDate)));
-            double different = curDate.getTime() - storeDate.getTime();
-            double hour = different/3600000;
-
-
-            wentToSleep.setText(displayTime.format(storeDate));
-            wakeUp.setText(displayTime.format(curDate));
-
-            ed.remove("counting");
-            ed.apply();
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
     }
