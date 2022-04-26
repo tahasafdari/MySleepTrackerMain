@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 try {
                     SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
                     ed = tracking.edit();
