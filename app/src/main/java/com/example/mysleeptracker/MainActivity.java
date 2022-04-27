@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
                 ed = tracking.edit();
 
-                Date storedate = new Date();
+                Date storeDate = new Date();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
 
-                ed.putString("counting", formatter.format(storedate));
+                ed.putString("counting", formatter.format(storeDate));
                 ed.apply();
 
                 Intent nightActivity = new Intent(MainActivity.this, night_activity.class);

@@ -30,7 +30,7 @@ public class stat_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stat);
         initUI();
-        statset();
+        getStatus();
 
 
         backToHome = findViewById(R.id.backtohome);
@@ -44,18 +44,18 @@ public class stat_activity extends AppCompatActivity {
         });
     }
 
-    private void statset(){
+    private void getStatus(){
         SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
         ed = tracking.edit();
-        Date curdate = new Date();
-        dateStat.setText(DateFormat.getDateInstance().format(curdate));
+        Date currentDate = new Date();
+        dateStat.setText(DateFormat.getDateInstance().format(currentDate));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
-        SimpleDateFormat displaytime = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat displayTime = new SimpleDateFormat("HH:mm:ss");
         try {
-            Date storedate = formatter.parse(tracking.getString("counting", formatter.format(curdate)));
+            Date storeDate = formatter.parse(tracking.getString("counting", formatter.format(currentDate)));
 
-            wentToSleep.setText(displaytime.format(storedate));
-            wakeUp.setText(displaytime.format(curdate));
+            wentToSleep.setText(displayTime.format(storeDate));
+            wakeUp.setText(displayTime.format(currentDate));
 
             ed.remove("counting");
             ed.apply();
