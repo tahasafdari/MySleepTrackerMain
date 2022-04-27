@@ -2,9 +2,12 @@ package com.example.mysleeptracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     private Button sleepButton, bedTimeGoalBtn;
@@ -20,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences.Editor ed;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+      //  tracking = PreferenceManager.getDefaultSharedPreferences(this);
+
 
         //setting up current date
         timeday = findViewById(R.id.timeday);
@@ -41,23 +46,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
+                ed = tracking.edit();
 
-                try {
-                    SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
-                    ed = tracking.edit();
-                    Date storeDate = new Date();
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
+                Date storedate = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
 
-                    ed.putString("counting", formatter.format(storeDate));
-                    ed.apply();
+                ed.putString("counting", formatter.format(storedate));
+                ed.apply();
 
+                Intent nightActivity = new Intent(MainActivity.this, night_activity.class);
+                startActivity(nightActivity);
 
-                    Intent nightActivity = new Intent(MainActivity.this, night_activity.class);
-                    startActivity(nightActivity);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         });
 
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent bedtimeActivity = new Intent(MainActivity.this, bedtime_activity.class);
-
                 startActivity(bedtimeActivity);
             }
         });
