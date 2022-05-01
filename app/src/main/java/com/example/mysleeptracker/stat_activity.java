@@ -29,6 +29,9 @@ public class stat_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stat);
+
+
+
         initUI();
         getStatus();
 
@@ -53,6 +56,8 @@ public class stat_activity extends AppCompatActivity {
         SimpleDateFormat displayTime = new SimpleDateFormat("HH:mm:ss");
         try {
             Date storeDate = formatter.parse(tracking.getString("counting", formatter.format(currentDate)));
+            System.out.println("storeDate: " + storeDate);
+
 
             wentToSleep.setText(displayTime.format(storeDate));
             wakeUp.setText(displayTime.format(currentDate));
@@ -67,7 +72,8 @@ public class stat_activity extends AppCompatActivity {
     }
 
 
-    public void initUI() {
+
+    public void initUI(){
         dateStat = findViewById(R.id.datestat);
         wentToSleep = findViewById(R.id.wenttosleep);
         wakeUp = findViewById(R.id.wakeup);
