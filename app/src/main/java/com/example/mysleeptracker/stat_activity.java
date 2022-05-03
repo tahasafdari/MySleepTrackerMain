@@ -25,6 +25,8 @@ public class stat_activity extends AppCompatActivity {
     TextView dateStat, wentToSleep, wakeUp, percentageAnalys;
     ProgressBar progressBar;
     private int progressBarStatus = 0;
+    private int maximumPercent = 100;
+    private int minimumPercent = 0;
 
 
 
@@ -71,14 +73,23 @@ public class stat_activity extends AppCompatActivity {
             double minutes = different/60000;
             System.out.println("difference in minutes between went to sleep and wakeup: " + minutes + " minutes and milliseconds");
 
-            //Percent max is 100 and best duration time for a user to sleep is recommended which 8 hours 8 * 60 = 480 minutes
+            //Percent max is 100 and best duration time for a user to sleep is recommended which is 8 hours 8 * 60 = 480 minutes
             int percent = (int) Math.round(minutes / 480 * 100);
             System.out.println("Percantage from 8 hours: " + percent + "%");
 
+            //setting the progress bar
             progressBar.setProgress(percent);
 
+            //setting the maximum percent to 100 percent and minimum to 0
+            if(percent > 100){
+                percentageAnalys.setText( maximumPercent + "%");
+            } else if (percent < 0) {
+                percentageAnalys.setText( minimumPercent + "%");
+            } else {
+                percentageAnalys.setText(percent + "%");
+            }
 
-            percentageAnalys.setText(percent + "%");
+
             wentToSleep.setText(displayTime.format(storeDate));
             wakeUp.setText(displayTime.format(currentDate));
 
