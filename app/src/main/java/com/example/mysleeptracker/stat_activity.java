@@ -24,12 +24,6 @@ public class stat_activity extends AppCompatActivity {
     SharedPreferences.Editor ed;
     TextView dateStat, wentToSleep, wakeUp, percentageAnalys;
     ProgressBar progressBar;
-    private int progressBarStatus = 0;
-    private int maximumPercent = 100;
-    private int minimumPercent = 0;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +31,6 @@ public class stat_activity extends AppCompatActivity {
         setContentView(R.layout.activity_stat);
 
         percentageAnalys = findViewById(R.id.progress_circularPercentage);
-
         progressBar = findViewById(R.id.progress_circular);
 
         initUI();
@@ -82,13 +75,14 @@ public class stat_activity extends AppCompatActivity {
 
             //setting the maximum percent to 100 percent and minimum to 0
             if(percent > 100){
+                int maximumPercent = 100;
                 percentageAnalys.setText( maximumPercent + "%");
             } else if (percent < 0) {
+                int minimumPercent = 0;
                 percentageAnalys.setText( minimumPercent + "%");
             } else {
                 percentageAnalys.setText(percent + "%");
             }
-
 
             wentToSleep.setText(displayTime.format(storeDate));
             wakeUp.setText(displayTime.format(currentDate));
